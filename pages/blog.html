@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .blog-post h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .blog-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Blog</div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="blog-post">
+            <a href="blogs.html" class="back-button">← Back to Blogs</a>
+            <div id="blog-content">
+                <!-- Blog content will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function loadBlog() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const blogId = urlParams.get('id');
+            
+            if (!blogId) {
+                window.location.href = 'blogs.html';
+                return;
+            }
+
+            const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+            const blog = blogs.find(b => b.id === blogId);
+
+            if (!blog) {
+                window.location.href = 'blogs.html';
+                return;
+            }
+
+            document.title = blog.title;
+            const blogContent = document.getElementById('blog-content');
+            
+            blogContent.innerHTML = `
+                <img src="${blog.image || 'https://via.placeholder.com/800x400'}" alt="${blog.title}">
+                <h1>${blog.title}</h1>
+                <div class="blog-meta">
+                    Published on ${new Date(blog.date).toLocaleDateString()}
+                    ${blog.lastModified ? ` (Last modified: ${new Date(blog.lastModified).toLocaleDateString()})` : ''}
+                </div>
+                <div class="blog-content">
+                    ${blog.content}
+                </div>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadBlog);
+    </script>
+</body>
+</html> 

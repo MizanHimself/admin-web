@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Blogs</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Blog</div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>All Blog Posts</h1>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search blogs...">
+        </div>
+
+        <div id="blog-list" class="blog-list">
+            <!-- Blog posts will be loaded here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load all blogs
+        function loadBlogs() {
+            const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+            displayBlogs(blogs);
+        }
+
+        // Display blogs in the list
+        function displayBlogs(blogs) {
+            const blogList = document.getElementById('blog-list');
+            
+            blogList.innerHTML = blogs.map(blog => `
+                <div class="post-card">
+                    <img src="${blog.image || 'https://via.placeholder.com/300x200'}" alt="${blog.title}">
+                    <div class="post-content">
+                        <h3>${blog.title}</h3>
+                        <p>${blog.content.substring(0, 150)}...</p>
+                        <a href="blog.html?id=${blog.id}" class="read-more">Read More</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Search functionality
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+            
+            const filteredBlogs = blogs.filter(blog => 
+                blog.title.toLowerCase().includes(searchTerm) || 
+                blog.content.toLowerCase().includes(searchTerm)
+            );
+            
+            displayBlogs(filteredBlogs);
+        });
+
+        // Load blogs when page loads
+        document.addEventListener('DOMContentLoaded', loadBlogs);
+    </script>
+</body>
+</html> 

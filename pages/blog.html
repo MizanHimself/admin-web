@@ -12,50 +12,277 @@
             padding: 2rem;
         }
 
-        .blog-post img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
+        .blog-header {
             margin-bottom: 2rem;
         }
 
-        .blog-post h1 {
+        .blog-header h1 {
             font-size: 2.5rem;
+            color: var(--text-primary);
             margin-bottom: 1rem;
         }
 
         .blog-meta {
-            color: #666;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
             margin-bottom: 2rem;
         }
 
         .blog-content {
             line-height: 1.8;
-            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
         }
 
         .back-button {
             display: inline-block;
             padding: 0.5rem 1rem;
-            background: #007bff;
-            color: #fff;
+            background: var(--accent);
+            color: white;
             text-decoration: none;
             border-radius: 5px;
             margin-bottom: 2rem;
+            transition: background 0.2s;
         }
 
         .back-button:hover {
-            background: #0056b3;
+            background: var(--accent-hover);
+        }
+
+        .blog-header {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+
+        .blog-header img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .blog-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .blog-header .meta {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .blog-meta span::after {
+            content: "•";
+            margin-left: 1rem;
+        }
+
+        .blog-meta span:last-child::after {
+            content: "";
+        }
+
+        .blog-body {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+
+        .blog-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .blog-body h2 {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .blog-tags {
+            margin-top: 3rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 0.3rem 0.8rem;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .related-posts {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-posts h3 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        #related-posts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .related-post-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .related-post-image-placeholder {
+            width: 100%;
+            height: 150px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .related-post-content {
+            padding: 1rem;
+        }
+
+        .related-post-content h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .related-post-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        header {
+            background: var(--bg-primary);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        main {
+            margin-top: 80px;
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">My Blog</div>
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="OSIS Logo">
+                <div class="logo">OSIS MTsN 1 Kota Malang</div>
+            </div>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="profil.html">Profil Osis</a></li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -64,13 +291,52 @@
         <div class="blog-post">
             <a href="blogs.html" class="back-button">← Back to Blogs</a>
             <div id="blog-content">
-                <!-- Blog content will be loaded here -->
+                <section class="blog-content">
+                    <div id="blog-container">
+                        <div class="blog-header">
+                            <div class="blog-header-content">
+                                <h1>Lorem Ipsum Dolor Sit Amet</h1>
+                                <div class="blog-meta">
+                                    <span class="date">Lorem Ipsum</span>
+                                    <span class="author">Dolor Sit</span>
+                                    <span class="category">Consectetur</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-body">
+                            <div class="blog-image-placeholder"></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            
+                            <h2>Consectetur Adipiscing Elit</h2>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                            
+                            <h2>Nemo Enim Ipsam</h2>
+                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                            
+                            <div class="blog-tags">
+                                <span class="tag">Lorem</span>
+                                <span class="tag">Ipsum</span>
+                                <span class="tag">Dolor</span>
+                                <span class="tag">Sit Amet</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-posts">
+                        <h3>Lorem Ipsum Dolor</h3>
+                        <div id="related-posts-container">
+                            <!-- Related posts will be loaded here -->
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 My Blog. All rights reserved.</p>
+        <p>&copy; 2024 OSIS MTsN 1 Kota Malang. All rights reserved.</p>
     </footer>
 
     <script>
@@ -91,20 +357,54 @@
                 return;
             }
 
-            document.title = blog.title;
-            const blogContent = document.getElementById('blog-content');
+            document.title = `${blog.title} - Lorem Ipsum Blog`;
+            const blogContainer = document.getElementById('blog-container');
             
-            blogContent.innerHTML = `
-                <img src="${blog.image || 'https://via.placeholder.com/800x400'}" alt="${blog.title}">
-                <h1>${blog.title}</h1>
-                <div class="blog-meta">
-                    Published on ${new Date(blog.date).toLocaleDateString()}
-                    ${blog.lastModified ? ` (Last modified: ${new Date(blog.lastModified).toLocaleDateString()})` : ''}
+            blogContainer.innerHTML = `
+                <div class="blog-header">
+                    <div class="blog-header-content">
+                        <h1>${blog.title}</h1>
+                        <div class="blog-meta">
+                            <span class="date">Published ${new Date(blog.date).toLocaleDateString()}</span>
+                            ${blog.lastModified ? `<span>Updated ${new Date(blog.lastModified).toLocaleDateString()}</span>` : ''}
+                            <span class="category">Lorem Ipsum</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="blog-content">
-                    ${blog.content}
+                <div class="blog-body">
+                    <div class="blog-image-placeholder"></div>
+                    ${blog.content.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('')}
+                    <div class="blog-tags">
+                        <span class="tag">Lorem</span>
+                        <span class="tag">Ipsum</span>
+                        <span class="tag">Dolor</span>
+                        <span class="tag">Sit Amet</span>
+                    </div>
                 </div>
             `;
+
+            // Load related posts
+            loadRelatedPosts(blog.id, blogs);
+        }
+
+        function loadRelatedPosts(currentBlogId, blogs) {
+            const relatedPosts = blogs
+                .filter(blog => blog.id !== currentBlogId)
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 3);
+
+            const relatedContainer = document.getElementById('related-posts-container');
+            
+            relatedContainer.innerHTML = relatedPosts.map(blog => `
+                <div class="related-post-card">
+                    <div class="related-post-image-placeholder"></div>
+                    <div class="related-post-content">
+                        <h4>${blog.title}</h4>
+                        <p>${blog.content.substring(0, 100)}...</p>
+                        <a href="blog.html?id=${blog.id}" class="read-more">Read More</a>
+                    </div>
+                </div>
+            `).join('');
         }
 
         document.addEventListener('DOMContentLoaded', loadBlog);

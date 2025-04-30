@@ -7,50 +7,138 @@
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .blog-list {
+            padding: 4rem 2rem;
+        }
+
+        .blog-filters {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .blog-filters input,
+        .blog-filters select {
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .blog-filters input {
+            flex: 1;
+        }
+
+        #blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
-        .search-container {
-            margin-bottom: 2rem;
+        .blog-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s;
         }
 
-        .search-container input {
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-content h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
             border-radius: 5px;
-            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .read-more:hover {
+            background: var(--accent-hover);
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">My Blog</div>
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="OSIS Logo">
+                <div class="logo">OSIS MTsN 1 Kota Malang</div>
+            </div>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="profil.html">Profil Osis</a></li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>All Blog Posts</h1>
-        
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search blogs...">
-        </div>
+        <section class="hero">
+            <h1>Lorem Ipsum Blog</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra euismod metus, eu pharetra nisi.</p>
+        </section>
 
-        <div id="blog-list" class="blog-list">
-            <!-- Blog posts will be loaded here -->
-        </div>
+        <section class="blog-list">
+            <div class="blog-filters">
+                <input type="text" id="search-input" placeholder="Lorem ipsum dolor sit amet...">
+                <select id="category-filter">
+                    <option value="">Lorem Ipsum</option>
+                    <option value="technology">Dolor Sit</option>
+                    <option value="development">Consectetur</option>
+                    <option value="ai">Adipiscing</option>
+                </select>
+            </div>
+            <div id="blog-container"></div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 My Blog. All rights reserved.</p>
+        <p>&copy; 2024 OSIS MTsN 1 Kota Malang. All rights reserved.</p>
     </footer>
 
     <script>
@@ -62,11 +150,10 @@
 
         // Display blogs in the list
         function displayBlogs(blogs) {
-            const blogList = document.getElementById('blog-list');
+            const blogContainer = document.getElementById('blog-container');
             
-            blogList.innerHTML = blogs.map(blog => `
+            blogContainer.innerHTML = blogs.map(blog => `
                 <div class="post-card">
-                    <img src="${blog.image || 'https://via.placeholder.com/300x200'}" alt="${blog.title}">
                     <div class="post-content">
                         <h3>${blog.title}</h3>
                         <p>${blog.content.substring(0, 150)}...</p>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil OSIS - MTsN 1 Kota Malang</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .profile-section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            color: var(--text-primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+
+        .content-section:nth-child(even) .content-text {
+            direction: ltr;
+        }
+
+        .content-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .content-text {
+            padding: 2rem;
+        }
+
+        .content-text h3 {
+            color: var(--text-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-text p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .member-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-info h4 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+        }
+
+        .member-section {
+            padding: 2rem;
+            background: var(--bg-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .member-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .member-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .member-info {
+            padding: 2rem;
+        }
+
+        .member-info h3 {
+            color: var(--text-primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .member-info h4 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .member-info p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .member-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="OSIS Logo">
+                <div class="logo">OSIS MTsN 1 Kota Malang</div>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="profil.html">Profil Osis</a></li>
+                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="section-title">
+                <h2>Pendahuluan</h2>
+                <p>Organisasi Siswa Intra Sekolah (OSIS) MTsN 1 Kota Malang merupakan wadah bagi siswa untuk mengembangkan potensi diri, berorganisasi, dan berkontribusi dalam kegiatan sekolah.</p>
+            </div>
+
+            <div class="content-container">
+                <div class="content-section">
+                    <img src="../images/osis-intro.jpg" alt="OSIS Introduction" class="content-image">
+                    <div class="content-text">
+                        <h3>Sejarah OSIS</h3>
+                        <p>OSIS MTsN 1 Kota Malang didirikan pada tahun 1985 dengan tujuan membentuk siswa yang berakhlak mulia, berprestasi, dan memiliki jiwa kepemimpinan. Selama bertahun-tahun, OSIS telah menjadi wadah utama dalam mengembangkan potensi siswa di berbagai bidang.</p>
+                        <p>Kami berkomitmen untuk terus meningkatkan kualitas pendidikan dan pengembangan karakter siswa melalui berbagai program dan kegiatan yang inovatif dan bermanfaat.</p>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2>Struktur Kepengurusan</h2>
+                    <p>Struktur kepengurusan OSIS MTsN 1 Kota Malang terdiri dari berbagai divisi yang bekerja sama untuk mencapai tujuan organisasi.</p>
+                </div>
+
+                <div class="content-section">
+                    <div class="content-text">
+                        <h3>Struktur Organisasi</h3>
+                        <p>OSIS MTsN 1 Kota Malang dipimpin oleh seorang Ketua OSIS yang dibantu oleh Wakil Ketua dan Sekretaris. Struktur organisasi terdiri dari beberapa divisi yang masing-masing memiliki tanggung jawab khusus dalam menjalankan program kerja.</p>
+                        <p>Setiap divisi dipimpin oleh seorang Koordinator yang bertanggung jawab atas pelaksanaan program kerja divisinya dan melaporkan hasilnya kepada Ketua OSIS.</p>
+                    </div>
+                    <img src="../images/struktur.jpg" alt="Struktur Organisasi" class="content-image">
+                </div>
+
+                <div class="section-title">
+                    <h2>Tim Inti OSIS</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+
+                <div class="member-section">
+                    <div class="member-content">
+                        <img src="../images/ketua-umum.jpg" alt="Ketua Umum OSIS" class="member-image">
+                        <div class="member-info">
+                            <h3>Lorem Ipsum</h3>
+                            <h4>Ketua Umum OSIS</h4>
+                            <p>Kelas IX-A</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-section">
+                    <div class="member-content">
+                        <div class="member-info">
+                            <h3>Lorem Ipsum</h3>
+                            <h4>Ketua 1 OSIS</h4>
+                            <p>Kelas IX-B</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <img src="../images/ketua-1.jpg" alt="Ketua 1 OSIS" class="member-image">
+                    </div>
+                </div>
+
+                <div class="member-section">
+                    <div class="member-content">
+                        <img src="../images/ketua-2.jpg" alt="Ketua 2 OSIS" class="member-image">
+                        <div class="member-info">
+                            <h3>Lorem Ipsum</h3>
+                            <h4>Ketua 2 OSIS</h4>
+                            <p>Kelas IX-C</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-section">
+                    <div class="member-content">
+                        <div class="member-info">
+                            <h3>Lorem Ipsum</h3>
+                            <h4>Sekretaris Umum OSIS</h4>
+                            <p>Kelas IX-A</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <img src="../images/sekretaris-umum.jpg" alt="Sekretaris Umum OSIS" class="member-image">
+                    </div>
+                </div>
+
+                <div class="member-section">
+                    <div class="member-content">
+                        <img src="../images/sekretaris-1.jpg" alt="Sekretaris 1 OSIS" class="member-image">
+                        <div class="member-info">
+                            <h3>Lorem Ipsum</h3>
+                            <h4>Sekretaris 1 OSIS</h4>
+                            <p>Kelas IX-B</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-section">
+                    <div class="member-content">
+                        <div class="member-info">
+                            <h3>Lorem Ipsum</h3>
+                            <h4>Bendahara Umum OSIS</h4>
+                            <p>Kelas IX-C</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <img src="../images/bendahara-umum.jpg" alt="Bendahara Umum OSIS" class="member-image">
+                    </div>
+                </div>
+
+                <div class="member-section">
+                    <div class="member-content">
+                        <img src="../images/bendahara-1.jpg" alt="Bendahara 1 OSIS" class="member-image">
+                        <div class="member-info">
+                            <h3>Lorem Ipsum</h3>
+                            <h4>Bendahara 1 OSIS</h4>
+                            <p>Kelas IX-A</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 OSIS MTsN 1 Kota Malang. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

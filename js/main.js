@@ -1,25 +1,34 @@
 // Default blogs that will always be available
 const DEFAULT_BLOGS = [
     {
-        id: 'default1',
-        title: 'Welcome to Tech Blog',
-        content: 'Welcome to our technology blog! Here you\'ll find the latest insights, tutorials, and discussions about software development, web technologies, and digital innovation. Our team of experts is dedicated to bringing you high-quality content that helps you stay ahead in the fast-paced world of technology.\n\nStay tuned for regular updates and feel free to explore our existing articles. Whether you\'re a beginner or an experienced developer, there\'s something here for everyone.',
-        image: 'https://picsum.photos/800/400?random=welcome',
-        date: new Date('2024-01-01').toISOString()
+        id: 'default-1',
+        title: 'Lorem Ipsum Dolor Sit Amet',
+        content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.`,
+        date: '2024-03-15'
     },
     {
-        id: 'default2',
-        title: 'Getting Started with Web Development',
-        content: 'Web development is an exciting field that combines creativity with technical skills. In this comprehensive guide, we\'ll explore the fundamental concepts and tools you need to begin your journey as a web developer.\n\nWe\'ll cover HTML, CSS, and JavaScript - the three core technologies that power the modern web. Whether you\'re looking to build simple websites or complex web applications, understanding these basics is essential.',
-        image: 'https://picsum.photos/800/400?random=webdev',
-        date: new Date('2024-01-15').toISOString()
+        id: 'default-2',
+        title: 'Consectetur Adipiscing Elit',
+        content: `Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?`,
+        date: '2024-03-14'
     },
     {
-        id: 'default3',
-        title: 'The Future of AI in Technology',
-        content: 'Artificial Intelligence is revolutionizing the way we interact with technology. From machine learning algorithms to neural networks, AI is becoming increasingly integrated into our daily lives.\n\nIn this article, we explore current AI trends, potential future developments, and how they might impact the technology landscape in the coming years. We\'ll also discuss practical applications of AI in web development and software engineering.',
-        image: 'https://picsum.photos/800/400?random=ai',
-        date: new Date('2024-02-01').toISOString()
+        id: 'default-3',
+        title: 'Nemo Enim Ipsam Voluptatem',
+        content: `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+
+Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+
+Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.`,
+        date: '2024-03-13'
     }
 ];
 
